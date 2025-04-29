@@ -6,11 +6,25 @@
 
   outputs = { self, nixpkgs, nixos-wsl, ... }: {
     nixosConfigurations = {
+      # WSL configuration
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           nixos-wsl.nixosModules.default
-          ./configuration.nix
+          ./hosts/wsl
+          ./common
+          {
+            system.stateVersion = "24.11";
+          }
+        ];
+      };
+      
+      # Latitude laptop configuration
+      latitude = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/latitude
+          ./common
           {
             system.stateVersion = "24.11";
           }
