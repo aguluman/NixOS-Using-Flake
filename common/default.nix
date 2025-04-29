@@ -41,4 +41,10 @@
     enable = true;
     package = pkgs.nix-ld-rs;
   };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 }
