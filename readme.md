@@ -5,7 +5,7 @@
 1. Clone this repository
 2. Apply the configuration:
 
-# NixOS Configuration Repository
+## NixOS Configuration Repository
 
 A centralized, flake-based NixOS configuration for multiple systems. This repository serves as a single source of truth for NixOS configurations across different devices.
 
